@@ -134,6 +134,10 @@ class TestUkWorkingDays < Test::Unit::TestCase
     should "return a DateTime if called from DateTime" do
       assert_kind_of DateTime,  DateTime.may_bank_holiday(2010)
     end
+
+    should "return May 8 for the year 2020" do
+      assert_equal Date.new(2020, 5, 8), Date.may_bank_holiday(2020)
+    end
   end
 
   context "Date#spring_bank_holiday" do

@@ -71,6 +71,9 @@ module UkWorkingDays
 
       # The first monday in May
       def may_bank_holiday(year)
+        # Special case in 2020 (VE day)
+        return new(year, 5, 8) if year == 2020
+
         first_day_may = new(year, 5, 1)
         first_day_may.wday == 1 ? first_day_may : first_day_may.next_week
       end 
